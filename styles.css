@@ -1,0 +1,193 @@
+/* Estilo para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Orbitron", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo predeterminado */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Imagenes/Fondo-predeterminado.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+    z-index: -1;
+}
+
+/* Fondo modificado al encriptar o desencriptar */
+body.bg-changed::before {
+    background-image: url('/Imagenes/Fondo-cliqueado.jpg');
+    opacity: 0.5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-section {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;    
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: "Orbitron", sans-serif; 
+    font-size: 24px;
+    border: 3px solid #789461;
+    border-radius: 16px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: #DBE7C9;
+}
+
+#output-container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    box-sizing: border-box;
+    border: 3px solid #789461;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#output-text {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+    border: none;
+    box-sizing: border-box;
+    resize: none;
+    overflow: auto;
+}
+
+#placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    text-align: center;
+}
+
+#placeholder-image {
+    max-width: 70%;
+    max-height: 50%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#placeholder-message {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#placeholder-submessage {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px; /* Ajusta el margen superior para centrar mejor */
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 7%;    
+    border-radius: 30%;
+    border: 5px solid #000;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: 3px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#encrypt-btn {
+    background-color: #294B29;
+    color: white;
+    margin-right: 20px;
+}
+
+#decrypt-btn {
+    background-color: #50623A;
+    color: white;
+}
+
+#copy-btn {
+    background-color: #789461;
+    color: #294B29;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ddd;
+    opacity: 0.8;
+}
+
+@media (min-width: 1000px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15%;
+    }
+
+    .text-section {        
+        width: 45%;
+        margin-bottom: 0;        
+    }
+   
+    #output-container{
+        width: 400px;
+        height: 700px;
+    }
+}
